@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+	validates_presence_of :nome
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -8,5 +9,5 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me
   attr_accessible :dataNascimento, :email, :nome, :senha
 
-  
+
 end
