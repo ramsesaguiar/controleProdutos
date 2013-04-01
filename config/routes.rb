@@ -4,14 +4,17 @@ ControleProdutos::Application.routes.draw do
 
   devise_for :users
 
-  get "pages/index"
-
+  
   resources :products
 
   root :to => "pages#index"
 
 
   resources :users
+
+
+   match 'quem_somos' => 'quemsomos#quem'
+  
 
 
   # The priority is based upon order of creation:
