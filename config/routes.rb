@@ -1,4 +1,7 @@
 ControleProdutos::Application.routes.draw do
+  resources :contacts
+
+
   devise_for :users
 
   get "pages/index"
