@@ -1,9 +1,13 @@
 ControleProdutos::Application.routes.draw do
+  resources :categories
+
+
   resources :contacts
 
 
   devise_for :users
-
+  
+  get "pages/index"
   
   resources :products
 
@@ -12,8 +16,7 @@ ControleProdutos::Application.routes.draw do
 
   resources :users
 
-
-   match 'quem_somos' => 'quemsomos#quem'
+  match 'quem_somos' => 'quemsomos#index'
   
 
 

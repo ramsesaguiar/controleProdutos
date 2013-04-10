@@ -2,24 +2,22 @@
 
 <table>
   <tr>
-    <th>Titulo</th>
-    <th>Preco</th>
-    <th>Data</th>
-    <th>Descricao</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Título </th>
+    <th>Preço </th>
+    <th>Data </th>
+    <th>Descrição </th>
+    
   </tr>
 
 <% @products.each do |product| %>
   <tr>
-    <td><%= product.titulo %></td>
-    <td><%= product.preco %></td>
-    <td><%= product.data %></td>
-    <td><%= product.descricao %></td>
-    <td><%= link_to 'Show', product %></td>
+    <td><%= capitalizatitle(product.titulo) %></td>
+    <td><%= product.preco %>    </td>
+    <td><%= product.data.strftime("   %m/%M/%Y - %H:%M  ") %>    </td>
+    <td align =center><%= product.descricao %>    </td>
+    <td border=3><%= link_to 'Show', product %>   </td>
     <td><%= link_to 'Edit', edit_product_path(product) %></td>
-    <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Destroy', product, :method => :delete, :confirm => "tem certeza?" %></td>
   </tr>
 <% end %>
 </table>

@@ -1,4 +1,7 @@
 class ProductsController < ApplicationController
+
+
+
   # GET /products
   # GET /products.json
   def index
@@ -14,7 +17,8 @@ class ProductsController < ApplicationController
   # GET /products/1.json
   def show
     @product = Product.find(params[:id])
-
+    
+    
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @product }
@@ -25,6 +29,10 @@ class ProductsController < ApplicationController
   # GET /products/new.json
   def new
     @product = Product.new
+   
+    @categoria = Category.all
+    @padrao = Category.where( :titulo=> "Default" )
+
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,16 +43,16 @@ class ProductsController < ApplicationController
   # GET /products/1/edit
   def edit
     @product = Product.find(params[:id])
+     @categoria = Category.all
   end
 
   # POST /products
   # POST /products.json
   def create
     @product = Product.new(params[:product])
-
     respond_to do |format|
       if @product.save
-        format.html { redirect_to @product, notice: 'Product was successfully created.' }
+        format.html { redirect_to @product, notice: 'Produto foi  criado com sucesso.' }
         format.json { render json: @product, status: :created, location: @product }
       else
         format.html { render action: "new" }
@@ -60,7 +68,7 @@ class ProductsController < ApplicationController
 
     respond_to do |format|
       if @product.update_attributes(params[:product])
-        format.html { redirect_to @product, notice: 'Product was successfully updated.' }
+        format.html { redirect_to @product, notice: 'Produto foi atualizado com sucesso.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -72,8 +80,10 @@ class ProductsController < ApplicationController
   # DELETE /products/1
   # DELETE /products/1.json
   def destroy
+    puts "teste: chegouuuu"
     @product = Product.find(params[:id])
     @product.destroy
+   
 
     respond_to do |format|
       format.html { redirect_to products_url }

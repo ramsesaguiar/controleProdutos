@@ -9,6 +9,10 @@ gem 'mysql2'
 
 gem 'devise', '2.0.0'
 
+gem 'bootstrap-sass'
+
+gem 'twitter-bootstrap-rails', '2.1.3'
+
 
 # Gems used only for assets and not required
 # in production environments by default.

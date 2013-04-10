@@ -11,6 +11,11 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
+//= require jquery_ujs
 //= require jquery.maskMoney
 //= require general
 //= require products
+//= require bootstrap
+//= require_tree .
+//= require rails
+

@@ -2,7 +2,7 @@
 
 <p>
   <b>Titulo:</b>
-  <%= @product.titulo %>
+  <%= @product.titulo.capitalize %>
 </p>
 
 <p>
@@ -19,7 +19,10 @@
   <b>Descricao:</b>
   <%= @product.descricao %>
 </p>
-
+<p>
+  <b>Categoria:</b>
+  <%= @product.category.titulo %>
+</p>
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>

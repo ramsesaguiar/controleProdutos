@@ -21,13 +21,20 @@
   </div>
   <div class="field">
     <%= f.label :data %><br />
-    <%= f.datetime_select :data %>
+    <%= f.datetime_select :data, :start_year => 1970 %>
   </div>
   <div class="field">
     <%= f.label :descricao %><br />
-    <%= f.text_area :descricao %>
+    <%= f.text_area :descricao, :rows =>5, :cols=> 40 %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+   
+   <div class="field">
+    <%= f.label :categoria %><br />
+    <%= collection_select(:product ,:category_id,  @categoria,  :id, :titulo, :selected => @padrao ) %>
+  </div>
+  
+<div class="actions">
+    <%= f.submit 'Criar' %>
   </div>
 <% end %>
+

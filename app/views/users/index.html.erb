@@ -1,4 +1,4 @@
-<h1>Listing users</h1>
+<h1>Listando usuário</h1>
 
 <table>
   <tr>
@@ -13,7 +13,7 @@
 
 <% @users.each do |user| %>
   <tr>
-    <td><%= user.nome %></td>
+    <td><%= user.nome.to_s.capitalize %></td>
     <td><%= user.dataNascimento %></td>
     <td><%= user.email %></td>
     <td><%= user.senha %></td>
